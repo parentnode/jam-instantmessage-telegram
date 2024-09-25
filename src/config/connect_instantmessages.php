@@ -9,7 +9,7 @@
 $this->instantmessages_connection(
 	array(
 		"type" => "telegram",
-		"chat_id" => "###CHAT_ID###",
-		"token" => "###TOKEN###",
+		"telegram_chat_id" => "###TELEGRAM_CHAT_ID###",
+		"telegram_token" => "###TELEGRAM_TOKEN###",
 	)
 );

@@ -1,27 +1,37 @@
 <?php
-global $model;
 
-include_once("classes/adapters/instantmessages/telegram.class.php");
-$module_class = new JanitorTelegram();
+@include_once("classes/adapters/instantmessages/telegram.class.php");
+$module_class = new JanitorTelegram(false);
+
+$connect_values = $module_class->getConnectValues("instantmessages");
+
+$telegram_token = isset($connect_values["telegram_token"]) ? $connect_values["telegram_token"] : "";
+$telegram_chat_id = isset($connect_values["telegram_chat_id"]) ? $connect_values["telegram_chat_id"] : "";
+
+$module_type = isset($connect_values["type"]) ? $connect_values["type"] : "";
 
 ?>
-<div class="scene module i:module i:telegram">
+<div class="scene module i:module telegram i:telegram">
 
-	<h1>Janitor / Instant messages / Telegram configuration</h1>
+	<h1>Telegram configuration</h1>
+	<h2>Instant messages</h2>
 
+	<? if($module_type !== "telegram"): ?>
+	<p class="warning">The system is currently configured for another Instant messaging module.</p>
+	<? endif; ?>
 
+	<p>Enter your Telegram token and chat_id to enable sending messages to Telegram.</p>
 
-
-	<?= $model->formStart("/janitor/admin/setup/module/updateSettings", array("class" => "mail labelstyle:inject")) ?>
+	<?= $module_class->formStart("modules/updateSettings/instantmessages/telegram", array("class" => "labelstyle:inject")) ?>
 		<fieldset>
-			<?= $model->input("telegram_token", array("value" => $telegram_token)) ?>
-			<?= $model->input("telegram_chat_id", array("value" => "$telegram_chat_id")) ?>
+			<?= $module_class->input("telegram_token", array("value" => $telegram_token)) ?>
+			<?= $module_class->input("telegram_chat_id", array("value" => $telegram_chat_id)) ?>
 		</fieldset>
 
 		<ul class="actions">
-			<?= $model->submit("Save", array("wrapper" => "li.save", "class" => "primary")) ?>
+			<?= $module_class->submit("Save", array("wrapper" => "li.save", "class" => "primary")) ?>
 		</ul>
 
-	<?= $model->formEnd() ?>
+	<?= $module_class->formEnd() ?>
 
 </div>

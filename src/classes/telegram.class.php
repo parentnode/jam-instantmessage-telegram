@@ -5,16 +5,24 @@ class JanitorTelegram extends Module {
 
 	private $chat_id;
 	private $token;
-	public $version;
+
+	public $module_group_id;
+	public $module_id;
 
 
 	function __construct($_settings) {
 
-		$this->version = "1";
 
-		# Instantiate the client.
-		$this->chat_id = $_settings["chat_id"];
-		$this->token = $_settings["token"];
+		parent::__construct();
+
+
+		# Set credentials
+		$this->chat_id = isset($_settings["chat_id"]) ? $_settings["chat_id"] : false;
+		$this->token = isset($_settings["token"]) ? $_settings["token"] : false;
+
+
+		$this->module_group_id = "instantmesseges";
+		$this->module_id = "telegram";
 
 
 		// token
@@ -33,7 +41,7 @@ class JanitorTelegram extends Module {
 			"required" => true,
 			"hint_message" => "Type your Chat ID.", 
 			"error_message" => "Chat ID must be filled out."
-		));		
+		));
 
 	}
 
