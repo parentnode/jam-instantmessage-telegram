@@ -5,6 +5,6 @@
 		"templates/index.php": "templates/janitor/modules/instantmessages/telegram/index.php",
 
 		"www/css/s-telegram.css": "www/janitor/css/setup/modules/s-telegram.css",
-		"www/js/m-telegram.js": "www/janitor/js/setup/modules/m-telegram.js",
+		"www/js/m-telegram.js": "www/janitor/js/setup/modules/m-telegram.js"
 	}
 }
