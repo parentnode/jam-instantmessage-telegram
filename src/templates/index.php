@@ -19,7 +19,7 @@ $module_type = isset($connect_values["type"]) ? $connect_values["type"] : "";
 		<?= $model->link("Modules", "modules", array("class" => "button", "wrapper" => "li.modules")) ?>
 	</ul>
 
-	<? if($module_type !== "telegram"): ?>
+	<? if($module_type && $module_type !== "telegram"): ?>
 	<p class="warning">The system is currently configured for another Instant messaging module.</p>
 	<? endif; ?>
 
