@@ -21,7 +21,7 @@ class JanitorTelegram extends Module {
 		$this->token = isset($_settings["token"]) ? $_settings["token"] : false;
 
 
-		$this->module_group_id = "instantmesseges";
+		$this->module_group_id = "instantmessage";
 		$this->module_id = "telegram";
 
 

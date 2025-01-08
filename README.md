@@ -1,4 +1,4 @@
-This is the source code for Janitor module instantmessages/telegram
+This is the source code for Janitor module instantmessage/telegram
 
 # About Janitor
 Janitor is an open source PHP content management and distribution developer toolkit, with a unique focus on frontend development. 
@@ -15,7 +15,7 @@ Visit https://think.dk or https://parentnode.dk for more information.
 This Janitor module is licensed as follows:
 
 ##Source code:
-https://github.com/parentnode/jam-instantmessages-telegram/blob/master/MIT-LICENSE.md
+https://github.com/parentnode/jam-instantmessage-telegram/blob/master/MIT-LICENSE.md
 
 
 

@@ -1,12 +1,12 @@
 <?php
 /**
-* This file contains settings for instantmessages/telegram connection
+* This file contains settings for instantmessage/telegram connection
 *
 *
 * @package Config
 */
 
-$this->instantmessages_connection(
+$this->instantmessage_connection(
 	array(
 		"type" => "telegram",
 		"telegram_chat_id" => "###TELEGRAM_CHAT_ID###",
